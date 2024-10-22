@@ -74,7 +74,7 @@ sudo apt-get install -y ca-certificates curl gnupg lsb-release && curl -fsSL htt
 ```
 ```
 #uninstall docker
-sudo apt-get remove --purge -y docker-ce docker-ce-cli containerd.io && sudo rm -rf /var/lib/docker /var/lib/containerd && sudo apt-get autoremove -y && sudo apt-get autoclean
+sudo apt-mark unhold docker-ce docker-ce-cli containerd.io && sudo apt-get remove --purge -y docker-ce docker-ce-cli containerd.io && sudo rm -rf /var/lib/docker /var/lib/containerd && sudo rm /etc/apt/sources.list.d/docker.list && sudo apt-get autoremove -y && sudo apt-get autoclean
 ```
 
 ### 5. Go (Golang)
