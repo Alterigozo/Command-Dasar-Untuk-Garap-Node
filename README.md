@@ -73,6 +73,18 @@ screen -X -S namascreen quit
 sudo apt-get install -y ca-certificates curl gnupg lsb-release && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && sudo apt-get update && sudo apt-get install -y docker-ce docker-ce-cli containerd.io && sudo apt-mark hold docker-ce docker-ce-cli containerd.io
 ```
 ```
+#lihat list docker yang berjalan
+docker ps -a
+```
+```
+#stop docker yang berjalan
+docker stop <IDContainer>
+```
+```
+#hapus docker yang berjalan
+docker rm <IDContainer>
+```
+```
 #uninstall docker
 sudo apt-mark unhold docker-ce docker-ce-cli containerd.io && sudo apt-get remove --purge -y docker-ce docker-ce-cli containerd.io && sudo rm -rf /var/lib/docker /var/lib/containerd && sudo rm /etc/apt/sources.list.d/docker.list && sudo apt-get autoremove -y && sudo apt-get autoclean
 ```
@@ -96,7 +108,10 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash 
 #uninstall node js
 rm -rf ~/.nvm && sed -i '/NVM_DIR/d' ~/.bashrc && source ~/.bashrc
 ```
-
+```
+#menjalankan/run file js (node.js)
+node namafile.js
+```
 ### 7. Python
 ```
 #install Python
@@ -104,9 +119,12 @@ sudo apt-get update && sudo apt-get install -y software-properties-common && sud
 ```
 ```
 #uninstall python
-sudo apt-get remove --purge -y python3 python3-pip && sudo add-apt-repository --remove ppa:deadsnakes/ppa && sudo apt-get autoremove -y && sudo apt-get autoclean
+sudo apt-get remove --purge -y python3.* && sudo apt-get autoremove -y && sudo apt-get autoclean
 ```
-
+```
+#menjalankan/run file py (python)
+python3 namafile.py
+```
 ### 8. Update Sistem VPS
 ```
 sudo apt update && sudo apt upgrade -y
