@@ -66,7 +66,10 @@ screen -ls
 #hapus screen
 screen -X -S namascreen quit
 ```
-
+```
+#uninstall screen
+sudo apt remove screen
+```
 ### 4. Docker
 ```
 #install docker
